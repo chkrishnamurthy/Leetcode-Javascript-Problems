@@ -1,0 +1,31 @@
+
+<html lang="en">
+<head>
+   
+    <title>Basic</title>
+</head>
+<body>
+
+    
+</body>
+
+<script>
+
+var cas = "255.100.50.0";
+
+var spilted = cas.split("").map(x=>{return x=="."?"[.]":x});
+// console.log(spilted);
+// var arr = [];
+// spilted.map(x=>{
+    
+//     if(x=="."){
+//         arr.push("[.]");
+//     }else{
+//         arr.push(x);
+//     }
+// });
+
+console.log(spilted.join(""));
+
+</script>
+</html>
