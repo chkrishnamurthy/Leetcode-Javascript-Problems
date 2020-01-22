@@ -1,49 +1,39 @@
 <html lang="en">
 
-<head>
-
-    <title>Basic</title>
-</head>
+<head></head>
 
 <body>
+    <h1>Problem</h1>
+    <p>We are given a list nums of integers representing a list compressed with run-length encoding.
+        Consider each adjacent pair of elements [a, b] = [nums[2*i], nums[2*i+1]] (with i >= 0). For each such pair,
+        there are a elements with value b in the decompressed list.
+        Return the decompressed list.</p>
 
+    <b>Example</b><br>
+    Input: nums = [1,2,3,4]
+    Output: [2,4,4,4] <br>
+
+    <b>Explanation:</b><br> The first pair [1,2] means we have freq = 1 and val = 2 so we generate the array [2].
+    The second pair [3,4] means we have freq = 3 and val = 4 so we generate [4,4,4].
+    At the end the concatenation [2] + [4,4,4,4] is [2,4,4,4].
+    <p>Check Console</p>
 
 </body>
 
 <script>
-
-
-    var intergers = [1, 2, 3, 4];
-
-    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-    var newArr = [];
-
-    
-
-    // while (arr.length) {
-    //     newArr.push(arr.splice(0, 2));
-    // }
-    // [1, 2]
-
-
-    // var final = [];
-    for (var i = 0; i < arr.length; i++) {
-        console.log(([arr[2*i], arr[2*i+1]]));
-     }
-
-    
-
-    console.log(arr);
-
-
-//     for (var j = 0; j < newArr[i].length; j++) {
-
-// final.push((newArr[i][j].toString()).repeat(newArr[i]));
-// // console.log(newArr[i][j]);
-// [2*i+1]
-// }
-
+    var nums = [1, 2, 3, 4];
+    var dum = [];
+    var num = [];
+    while (nums.length) {
+        dum.push(nums.splice(0, 2));
+    }
+    for (var i = 0; i < dum.length; i++) {
+        var t = dum[i][0];
+        num.push(parseInt(dum[i][1].toString().repeat(t)));
+    }
+    var int = parseInt(num.join("").split(",")).toString()
+    var mapr = int.split("").map(item => parseInt(item))
+    console.log(mapr);
 </script>
 
 </html>
